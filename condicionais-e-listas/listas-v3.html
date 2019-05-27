@@ -10,6 +10,12 @@
         <h1>{{ cor }}</h1>
         <p>{{ i }}</p>
     </template>
+    <hr>
+    <ul>
+        <li v-for="pessoa in pessoas">
+            {{ pessoa.nome }} {{ pessoa.idade }} {{ pessoa.peso }}
+        </li>
+    </ul>
 </div>
 
 <script>
@@ -17,7 +23,7 @@
         el: '#app',
         data: {
             cores: ['vermelho', 'verde', 'amarelo', 'azul'],
-            pessoa: [
+            pessoas: [
                 { nome: 'Ana', idade: 26, peso: 58 },
                 { nome: 'Guilherme', idade: 22, peso: 89 }
             ]
