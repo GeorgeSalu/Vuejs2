@@ -17,13 +17,21 @@ new Vue({
             this.monsterLife = 100;
         },
         attack(especial) {
-            this.hurt('playerLife', 7, 12, especial);
-            this.hurt('monsterLife', 7, 12, false);
+            this.hurt('monsterLife', 5, 10, especial);
+            this.hurt('playerLife', 7, 12, false);
         },
         hurt(prop, min, max, especial) {
             const plus = especial ? 5 : 0;
             const hurt = this.getRandom(min + plus, max + plus);
             this[prop] = Math.max(this[prop] - hurt, 0);
+        },
+        healAndHurt() {
+            this.heal(10, 15);
+            this.hurt('playerLife', 7, 12, false)
+        },
+        heal(min, max) {
+            const heal = this.getRandom(min, max);
+            this.playerLife = Math.min(this.playerLife + heal, 100);
         },
         getRandom(min, max) {
             const value = Math.random() * (min - max) + min;
