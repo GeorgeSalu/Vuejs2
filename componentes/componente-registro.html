@@ -1,12 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<div id="app">
-    <contador></contador>
+<div id="app1">
+    <contador1></contador1>
+</div>
+
+<div id="app2">
+    <contador2></contador2>
 </div>
 
 <script>
     //registro global
-    Vue.component('contador', {
+    const contador = {
         template: `
             <div>
                     <span></span>
@@ -19,10 +23,19 @@
                 contador: 0
             }
         }
-    })
-
+    }
 
     new Vue({
-        el: '#app'
+        el: '#app1',
+        components: {
+            contador1: contador
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        components: {
+            contador1: contador
+        }
     })
 </script>
