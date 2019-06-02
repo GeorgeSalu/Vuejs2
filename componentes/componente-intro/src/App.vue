@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>Contador</h1>
-	<app-contador/>
-	<app-contador/>
+	<app-contadores/>
+	<app-contadores/>
   </div>
 </template>
 
