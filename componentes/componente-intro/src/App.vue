@@ -3,6 +3,7 @@
     <h1>Contador</h1>
 	<app-contadores/>
 	<app-contadores/>
+	<button>XX</button>
   </div>
 </template>
 
