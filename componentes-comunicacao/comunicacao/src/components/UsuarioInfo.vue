@@ -26,8 +26,8 @@ export default {
             return this.nome.split('').reverse().join('')
         },
         reiniciarNome() {
-            this.nome = 'pedro'
-            this.$emit('nomeMudou', this.nome)
+            //this.nome = 'pedro'
+            this.$emit('nomeMudou', 'Pedro')
         }
     }
 }
