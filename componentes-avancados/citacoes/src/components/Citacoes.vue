@@ -6,7 +6,7 @@
         </span>
         <Citacao>
             <h1 slot="autor">{{ citacoes[indice].autor }}</h1>
-            <p slot="texto">{{ citacoes[indice].fonte }}</p>
+            <p >{{ citacoes[indice].fonte }}</p>
             <p slot="fonte">{{ citacoes[indice].texto }}</p>
         </Citacao>
     </div>
