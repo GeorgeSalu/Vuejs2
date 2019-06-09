@@ -1,8 +1,11 @@
 <template>
     <div class="citacao">
-        <slot name="autor"></slot>
+        
         <slot ></slot>
         <slot name="fonte"></slot>
+        <div class="autor">
+            <slot name="autor"></slot>
+        </div>
     </div>
 </template>
 
@@ -22,5 +25,9 @@ export default {
 
     h1 {
         color: red;
+    }
+
+    .autor {
+        float: right;
     }
 </style>
