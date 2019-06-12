@@ -1,10 +1,11 @@
 <template>
     <div class="task-grid">
-        <template>
+        <template v-if="tasks.length">
             <Task v-for="task in tasks" :key="task.name"
                 :task="task">
             </Task>
         </template>
+        <p v-else class="no-task">Sua vida esta em dia :)</p>
     </div>
 </template>
 
@@ -45,5 +46,20 @@ export default {
         border-left: 12px solid #0A8F08;
         background-color: #4CAF50;
         text-decoration: line-through;
+    }
+
+    .task-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .task-grid .task {
+        margin: 10px;
+    }
+
+    .no-content {
+        color: #AAA;
+        font-size: 1.7rem;
     }
 </style>
