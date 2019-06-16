@@ -3,6 +3,8 @@
 		<h1>Diretivas</h1>
 		<hr/>
 		<p v-text="'usando diretiva v-text'"></p>
+		<hr/>
+		<p v-destaque>usando diretiva personalizada</p>
 	</div>
 </template>
 
