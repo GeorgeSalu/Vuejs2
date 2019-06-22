@@ -2,7 +2,8 @@
 	<div id="app">
 		<h1>Filtros & Mixins</h1>
 		<hr/>
-		<p>{{ cpf | cpf | inverter}}</p>
+		<p>{{ cpfDoAluno | cpf | inverter}}</p>
+		<input type="text" :value="cpfDoAluno | cpf" />
 	</div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
 	},
 	data() {
 		return {
-			cpf : '60070080090'
+			cpfDoAluno : '60070080090'
 		}
 	}
 }
