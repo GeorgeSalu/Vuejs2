@@ -19,10 +19,12 @@
 </template>
 
 <script>
+import frutasMixin from './FrutasMixin'
 import Frutas from './Frutas.vue'
 
 export default {
 	components: {Frutas},
+	mixins: [frutasMixin],
 	filters: {
 		cpf(valor) {
 			const arr = valor.split('')
@@ -34,17 +36,9 @@ export default {
 	},
 	data() {
 		return {
-			cpfDoAluno : '60070080090',
-			fruta: '',
-            frutas: ['banana', 'maca', 'laranja']
+			cpfDoAluno : '60070080090'
 		}
-	},
-	methods: {
-        add() {
-            this.frutas.push(this.fruta)
-            this.fruta = ''
-        }
-    }
+	}
 }
 </script>
 
