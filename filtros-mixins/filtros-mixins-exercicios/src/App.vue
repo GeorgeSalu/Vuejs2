@@ -19,12 +19,13 @@
 </template>
 
 <script>
+import usuarioMixin from './usuarioMixin'
 import frutasMixin from './FrutasMixin'
 import Frutas from './Frutas.vue'
 
 export default {
 	components: {Frutas},
-	mixins: [frutasMixin],
+	mixins: [frutasMixin, usuarioMixin],
 	filters: {
 		cpf(valor) {
 			const arr = valor.split('')
