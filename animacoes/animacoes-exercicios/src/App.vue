@@ -21,13 +21,14 @@
 		</transition>
 
 		<hr/>
-		<b-select v-model="tipoAnimacao">
+		<b-select v-model="tipoAnimacao" class="mb-4">
 			<option value="fade">Fade</option>
 			<option value="slide">Slide</option>
 		</b-select>
 
 		<transition :name="tipoAnimacao">
-			<b-alert variant="info" show v-show="exibir">{{ msg }}</b-alert>
+			<b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
+			<b-alert variant="info" show v-else>{{ msg }}</b-alert>
 		</transition>
 
 	</div>
@@ -39,7 +40,8 @@ export default {
 	data() {
 		return {
 			msg: 'Uma mensagem de informação para o usuario!',
-			exibir: false
+			exibir: false,
+			tipoAnimacao: 'fade'
 		}
 	}
 }
