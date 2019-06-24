@@ -20,17 +20,22 @@
 			<b-alert variant="info" show v-show="exibir">{{ msg }}</b-alert>
 		</transition>
 
+	
+
 		<hr/>
-		<b-select v-model="tipoAnimacao" class="mb-4">
-			<option value="fade">Fade</option>
-			<option value="slide">Slide</option>
-		</b-select>
-
-		<transition :name="tipoAnimacao">
-			<b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
-			<b-alert variant="info" show v-else>{{ msg }}</b-alert>
+		<button @click="exibir2 = !exibir2">Mostrar</button>
+		<transition
+			@before-enter="beforeEnter"
+			@enter="enter"
+			@after-enter="afterEnter"
+			@enter-cancelled="enterCancelled"
+			
+			@before-leave="beforeLeave"
+			@leave="leave"
+			@after-leave="afterLeave"
+			@leave-cancelled="leaveCancelled">
+			<div class="caixa"></div>
 		</transition>
-
 	</div>
 </template>
 
@@ -41,6 +46,7 @@ export default {
 		return {
 			msg: 'Uma mensagem de informação para o usuario!',
 			exibir: false,
+			exibir2: true,
 			tipoAnimacao: 'fade'
 		}
 	}
@@ -57,6 +63,14 @@ export default {
 	margin-top: 60px;
 	font-size: 1.5rem;
 }
+
+.caixa {
+	height: 100px;
+	width: 300px;
+	margin: 30px auto;
+	background-color: lightgreen;
+}
+
 
 .fade-enter {
 	opacity: 0;
