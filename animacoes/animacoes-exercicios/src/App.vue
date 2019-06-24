@@ -49,6 +49,32 @@ export default {
 			exibir2: true,
 			tipoAnimacao: 'fade'
 		}
+	},
+	methods: {
+		beforeEnter(el) {
+
+		},
+		enter(el, done) {
+
+		},
+		afterEnter(el) {
+
+		},
+		enterCancelled() {
+
+		},
+		beforeLeave(el) {
+
+		},
+		leave(el, done) {
+
+		},
+		afterLeave(el) {
+
+		},
+		leaveCancelled() {
+			
+		}
 	}
 }
 </script>
