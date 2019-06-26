@@ -1,12 +1,20 @@
 <template>
-    <div class="result">
-        
+    <div class="result" :class="{wrong: !result}">
+        <span v-if="result">Resposta Certa! :)</span>
+        <span v-else>Resposta Errada! :(</span>
+        <hr>
+        <button @click="$emit('confirmed')">Próxima Pergunta</button>
     </div>
 </template>
 
 <script>
 export default {
-    
+    props: {
+        result: {
+            type: Boolean,
+            required: true
+        }
+    }
 }
 </script>
 
@@ -34,6 +42,7 @@ export default {
         background-color: #f05250;
         color: #bb2814;
     }
+
 
     .result button {
         outline: none;
