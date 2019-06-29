@@ -31,6 +31,9 @@
 </template>
 
 <script>
+//importando localmente
+//import axios from 'axios'
+
 export default {
 	data() {
 		return {
