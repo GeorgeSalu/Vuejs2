@@ -10,8 +10,18 @@ Vue.use({
             baseURL: 'https://curso-vue-33b94.firebaseio.com/'
         })
 
-        /*Vue.prototype.$http.interceptors.request.use(config => {
+        /*Interceptando requisicao
+        Vue.prototype.$http.interceptors.request.use(config => {
             console.log(config.method)
         })*/
+
+        /* Interceptando resposta
+        Vue.prototype.$http.interceptors.response.use(res => {
+            const array = []
+            for(let chave in res.data) {
+                array.push({ id: chave, ...res.data[chave]})
+            }
+        }, error => Promise.reject(error))
+        */
     }
 })
