@@ -9,5 +9,9 @@ Vue.use({
         Vue.prototype.$http = axios.create({
             baseURL: 'https://curso-vue-33b94.firebaseio.com/'
         })
+
+        /*Vue.prototype.$http.interceptors.request.use(config => {
+            console.log(config.method)
+        })*/
     }
 })
