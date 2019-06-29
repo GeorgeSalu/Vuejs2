@@ -2,6 +2,8 @@ import Vue from 'vue'
 import axios from 'axios'
 
 //axios.defaults.baseURL = 'https://curso-vue-33b94.firebaseio.com/'
+// adicionando headers globais
+//axios.defaults.headers.common['Authorization'] = 'abc123'
 
 Vue.use({
     install(Vue) {
