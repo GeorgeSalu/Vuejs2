@@ -9,7 +9,7 @@
 			</b-form-group>
 			<b-form-group label="E-mail:">
 				<b-form-input type="email" size="lg"
-					v-model="usuario.nome"
+					v-model="usuario.email"
 					placeholder="Informe o E-mail"></b-form-input>
 			</b-form-group>
 			<hr/>
@@ -31,7 +31,11 @@ export default {
 	},
 	methods: {
 		salvar() {
-			console.log(this.usuario)
+			this.$http.post('usuarios.json', this.usuario)
+						.then(resp => {
+							this.usuario.nome = ''
+							this.usuario.email = ''
+						})
 		}
 	}
 	/*created() {
