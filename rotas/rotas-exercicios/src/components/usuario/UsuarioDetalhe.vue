@@ -2,7 +2,9 @@
     <div class="usuario-lista">
         <h3>Usuario detalhe</h3>
         <p><strong>Codigo:</strong>{{ id }}</p>
-        <router-link tag="button" primario :to="`/usuario/${id}/editar`">
+        <!-- :to="`/usuario/${id}/editar`" -->
+        <router-link tag="button" primario  
+            :to="{name: 'editarUsuario', params: { id } }">
             editar
         </router-link>
     </div>

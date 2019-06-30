@@ -22,6 +22,7 @@ export default new Router({
             { path: '', component: UsuarioLista },
             { path: ':id', component: UsuarioDetalhe, props: true },
             { path: ':id/editar', component: UsuarioEditar, props: true },
+            { path: 'editarUsuario' },
         ]
     }]
 })
