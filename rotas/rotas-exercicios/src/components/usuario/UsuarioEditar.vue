@@ -2,6 +2,7 @@
     <div class="usuario-lista">
         <h3>Usuario editar</h3>
 
+        <button primario>Confirmar</button>
         <div id="rodape">
             <h3>Curso Vue</h3>
         </div>
