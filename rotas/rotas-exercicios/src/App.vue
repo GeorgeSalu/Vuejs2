@@ -2,14 +2,18 @@
 	<div id="app">
 		<h1>Rotas com VueRouter</h1>
 		<router-view name="menu"></router-view>
-		<router-view />
+		<transition 
+			enter-active-class="animated rubberBand"
+			leave-active-class="animated rollOut">
+			<router-view />
+		</transition>
 	</div>
 </template>
 
 <script>
 
 export default {
-	
+
 }
 </script>
 
