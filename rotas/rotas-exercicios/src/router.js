@@ -12,7 +12,7 @@ import MenuAlt from './components/template/MenuAlt'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     scrollBehavior() {
         return {x: 0, y: 1000}
@@ -46,3 +46,10 @@ export default new Router({
         redirect: '/'
     }]
 })
+
+router.beforeEach((to, from, next) => {
+    //console.log('antes das rotas -> global')
+    next()
+})
+
+export default router
