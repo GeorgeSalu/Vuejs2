@@ -1,4 +1,5 @@
 export default {
+    // namespace para evitar conflito
     namespaced: true,
     state: {
         produtos: []
