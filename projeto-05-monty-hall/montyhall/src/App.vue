@@ -1,12 +1,16 @@
 <template>
     <div id="app">
         <h1>Problema de montyhall</h1>
+        <Gift />
     </div>
 </template>
 
 <script>
-export default {
+import Gift from './components/Gift'
 
+export default {
+    name: 'App',
+    components: { Gift }
 }
 </script>
 
