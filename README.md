@@ -1,3 +1,5 @@
+VueJS é um framework Javascript fantástico p construir aplicações Frontend! Vue.js mistura o melhor do Angular + React!
+
 Não importa em que métrica você olhe (Google Trends, Github Stars, Tweets ...) O Vue JS é a estrela no mundo dos frameworks JavaScript - é simplesmente incrível!
 
 
