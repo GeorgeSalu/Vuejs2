@@ -22,7 +22,7 @@ module.exports = app => {
                 .catch(err => res.status(500).send(err))
         } else {
             app.db('categories')
-                .insert('categories')
+                .insert(category)
                 .then(_ => res.status(204).send())
                 .catch(err => res.status(500).send(err))
         }
@@ -52,4 +52,48 @@ module.exports = app => {
         }
     }
 
+    const withPath = categories => {
+        
+        const getParent = (categories, parentId) => {
+            const parent = categories.filter(parent => parent.id === parentId)
+            return parent.length ? parent[0] : null
+        }
+
+        const categoriesWithPath = categories.map(category => {
+
+            let path = category.name
+            let parent = getParent(categories, category.parentId)
+
+            while(parent) {
+                path = `${parent.name} > ${path}`
+                parent = getParent(categories, parent.parentId)
+            }
+
+            return { ...category, path}
+        })
+
+        categoriesWithPath.sort((a, b) => {
+            if(a.path < b.path) return -1
+            if(a.path > b.path) return 1
+            return 0
+        })
+
+        return categoriesWithPath
+    }
+
+    const get = (req, res) => {
+        app.db('categories')
+            .then(categories => res.json(withPath(categories)))
+            .catch(err => res.status(500).send(err))
+    }
+
+    const getById = (req, res) => {
+        app.db('categories')
+            .where({ id: req.params.id })
+            .first()
+            .then(category => res.json(category))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, remove, get, getById }
 }
